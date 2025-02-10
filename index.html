@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Emmanuel Yegon's Portfolio - Software Engineer</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #eef2f3;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+            margin: 0;
+            color: #333;
+        }
+        h1 {
+            color: #007bff;
+            margin-bottom: 10px;
+            font-size: 2.5em;
+            text-align: center;
+        }
+        nav {
+            margin: 20px 0;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        nav button {
+            margin: 5px;
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.3s;
+            font-size: 1em;
+        }
+        nav button:hover {
+            background-color: #0f69b3;
+            transform: scale(1.05);
+        }
+        nav button.active {
+            background-color: #4c00ff; /* Change color when clicked */
+        }
+        .content {
+            max-width: 800px;
+            text-align: center;
+            margin: 20px 0;
+            display: none;
+            background: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+        }
+        .profile-image {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            margin-bottom: 20px;
+            border: 5px solid #007bff;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .profile-image:hover {
+            transform: scale(1.1);
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+        }
+        .skills {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 10px;
+        }
+        .skill {
+            background: #007bff;
+            color: white;
+            padding: 8px 12px;
+            border-radius: 5px;
+            margin: 5px;
+            font-size: 0.9em;
+        }
+        footer {
+            margin-top: 20px;
+            font-size: 0.9em;
+            color: #6c757d;
+        }
+        blockquote {
+            border-left: 4px solid #007bff;
+            padding-left: 15px;
+            color: #555;
+            font-style: italic;
+            margin: 15px 0;
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        li {
+            margin: 10px 0;
+        }
+        .svg-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 20px 0;
+        }
+        .container {
+            --uib-size: 55px;
+            --uib-color: black;
+            --uib-speed: 1.3s;
+            --uib-bg-opacity: .1;
+            height: calc(var(--uib-size) * (2.1 / 5));
+            width: var(--uib-size);
+            transform-origin: center;
+            overflow: visible;
+        }
+        .car {
+            fill: none;
+            stroke: var(--uib-color);
+            stroke-dasharray: 15, 85;
+            stroke-dashoffset: 0;
+            stroke-linecap: round;
+            animation: travel var(--uib-speed) linear infinite;
+            will-change: stroke-dasharray, stroke-dashoffset;
+            transition: stroke 0.5s ease;
+        }
+        .track {
+            stroke: var(--uib-color);
+            opacity: .1;
+            transition: stroke 0.5s ease;
+            stroke-dasharray: 5, 5; /* Dashed track for better look */
+        }
+        @keyframes travel {
+            0% {
+                stroke-dashoffset: 0;
+            }
+            100% {
+                stroke-dashoffset: -100;
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1>Emmanuel Yegon</h1>
+    <img class="profile-image" src="me.jpg" alt="Profile Picture">
+    <nav>
+        <button onclick="showContent('about', this)">About Me</button>
+        <button onclick="showContent('projects', this)">Projects</button>
+        <button onclick="showContent('skills', this)">Skills</button>
+        <button onclick="showContent('contact', this)">Contact</button>
+        <button onclick="showContent('hire', this)">Why Hire Me</button>
+        <button onclick="showContent('testimonials', this)">Testimonials</button>
+        <button onclick="showContent('awards', this)">Awards</button>
+        <button onclick="showContent('certifications', this)">Certifications</button>
+    </nav>
+    <div id="about" class="content">
+        <h2>About Me</h2>
+        <p>I am Yegon Emmanuel, a passionate software engineer with experience in developing scalable web applications. I love coding and continuously learning new technologies.</p>
+        <p>With a background in computer science, I specialize in full-stack development, focusing on creating efficient and user-friendly applications.</p>
+    </div>
+    <div id="projects" class="content">
+        <h2>Projects</h2>
+        <ul>
+            <li><strong>Project 1:</strong> A web application for managing tasks. <a href="#" target="_blank">View Project</a></li>
+            <li><strong>Project 2:</strong> An e-commerce platform built with React and Node.js. <a href="#" target="_blank">View Project</a></li>
+            <li><strong>Project 3:</strong> A mobile app for tracking fitness activities. <a href="#" target="_blank">View Project</a></li>
+        </ul>
+    </div>
+    <div id="skills" class="content">
+        <h2>Skills</h2>
+        <div class="skills">
+            <div class="skill">JavaScript</div>
+            <div class="skill">React</div>
+            <div class="skill">Node.js</div>
+            <div class="skill">HTML & CSS</div>
+            <div class="skill">Python</div>
+            <div class="skill">SQL</div>
+            <div class="skill">Git</div>
+            <div class="skill">Agile Methodologies</div>
+        </div>
+    </div>
+
+    <div id="contact" class="content">
+        <h2>Contact Me</h2>
+        <p>If you would like to get in touch, feel free to reach out via email at <a href="mailto:your.email@example.com">your.email@example.com</a>.</p>
+    </div>
+    <div id="hire" class="content">
+        <h2>Why You Should Hire Me</h2>
+        <p>I am dedicated, detail-oriented, and passionate about coding. Here are a few reasons to consider me:</p>
+        <ul>
+            <li>Strong problem-solving skills and a keen analytical mindset.</li>
+            <li>Experience with multiple programming languages and frameworks.</li>
+            <li>Ability to work collaboratively in team environments.</li>
+            <li>Commitment to continuous learning and staying updated with industry trends.</li>
+        </ul>
+    </div>
+    <div id="testimonials" class="content">
+        <h2>Testimonials</h2>
+        <blockquote>
+            <p>"Yegon is a fantastic developer who consistently delivers high-quality work."</p>
+            <footer>- Client Name, Position</footer>
+        </blockquote>
+        <blockquote>
+            <p>"His attention to detail and problem-solving skills make him an asset to any team."</p>
+            <footer>- Colleague Name, Position</footer>
+        </blockquote>
+    </div>
+    <div id="awards" class="content">
+        <h2>Awards & Achievements</h2>
+        <ul>
+            <li>Best Developer Award 2023</li>
+            <li>Hackathon Winner 2022</li>
+        </ul>
+    </div>
+    <div id="certifications" class="content">
+        <h2>Certifications</h2>
+        <ul>
+            <li>Certified JavaScript Developer</li>
+            <li>React Certification from XYZ Institute</li>
+        </ul>
+    </div>
+        <!-- SVG Section -->
+        <div class="svg-container">
+            <svg
+                class="container" 
+                x="0px" 
+                y="0px"
+                viewBox="0 0 55 23.1"
+                height="23.1"
+                width="55"
+                preserveAspectRatio='xMidYMid meet'
+            >
+                <path
+                    class="track" 
+                    fill="none" 
+                    stroke-width="4" 
+                    pathlength="100"
+                    d="M26.7,12.2c3.5,3.4,7.4,7.8,12.7,7.8c5.5,0,9.6-4.4,9.6-9.5C49,5,45.1,1,39.8,1c-5.5,0-9.5,4.2-13.1,7.8l-3.4,3.3c-3.6,3.6-7.6,7.8-13.1,7.8C4.9,20,1,16,1,10.5C1,5.4,5.1,1,10.6,1c5.3,0,9.2,4.5,12.7,7.8L26.7,12.2z"
+                />
+                <path
+                    class="car" 
+                    fill="none" 
+                    stroke-width="4" 
+                    pathlength="100"
+                    d="M26.7,12.2c3.5,3.4,7.4,7.8,12.7,7.8c5.5,0,9.6-4.4,9.6-9.5C49,5,45.1,1,39.8,1c-5.5,0-9.5,4.2-13.1,7.8l-3.4,3.3c-3.6,3.6-7.6,7.8-13.1,7.8C4.9,20,1,16,1,10.5C1,5.4,5.1,1,10.6,1c5.3,0,9.2,4.5,12.7,7.8L26.7,12.2z"
+                />
+            </svg>
+        </div>
+    <footer>
+        <p>&copy; Ygn </p>
+    </footer>
+    <script>
+        function showContent(section, button) {
+            // Hide all content sections
+            const contents = document.querySelectorAll('.content');
+            contents.forEach(content => content.style.display = 'none');
+
+            // Show the selected section
+            document.getElementById(section).style.display = 'block';
+
+            // Remove 'active' class from all buttons
+            const buttons = document.querySelectorAll('nav button');
+            buttons.forEach(btn => btn.classList.remove('active'));
+
+            // Add 'active' class to the clicked button
+            button.classList.add('active');
+        }
+
+        // Show the About Me section by default
+        showContent('about', document.querySelector('nav button'));
+    </script>
+</body>
+</html>
+
